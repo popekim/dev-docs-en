@@ -1,5 +1,5 @@
 ## Live Website
-[Pope's Dev Docs(https://docs.popekim.com/en/)](https://docs.popekim.com/en/)
+[Pope's Dev Docs (https://docs.popekim.com/en/)](https://docs.popekim.com/en/)
 
 ## Intro
 Collection of dev-related documents. The docs in this repo are "automatically" published to [Pope's Dev Docs website](https://docs.popekim.com/en/).
