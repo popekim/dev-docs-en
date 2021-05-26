@@ -7,9 +7,9 @@ date: 2021-05-25
 ### General
 * [C++ Coding Standards](/en/coding-standards/cpp)
 * [C# Coding Standards](/en/coding-standards/csharp)
+* [Java Coding Standards](/en/coding-standards/java)
 
 ### For POCU Academy
-
 
 
 
