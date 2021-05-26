@@ -67,8 +67,8 @@ This coding standards is inspired by these coding standards
 6. prefix boolean variables with `b`
 
     ```cpp
-    bool bFired;	// 지역 변수와 public 멤버 변수의 경우
-    bool mbFired;	// 클래스의 private 멤버 변수의 경우
+    bool bFired;	// for local and public member variable
+    bool mbFired;	// for private class member variable
     ```
 
 
@@ -319,10 +319,10 @@ This coding standards is inspired by these coding standards
 37. Use assert for any assertion you have. Assert is not recoverable. This can be replaced by compiler optimization hint keyword [__assume](https://docs.microsoft.com/en-us/cpp/intrinsics/assume) for the release build.
 
 
-38. ~~Any memory allocation must be done through our own New and Delete keyword.~~
+38. Any memory allocation must be done through our own New and Delete keyword.
 
 
-39. ~~Memory operations such as memset, memcpy and memmove also must be done through our own MemSet, MemCpy and MemMove.~~
+39. Memory operations such as memset, memcpy and memmove also must be done through our own MemSet, MemCpy and MemMove.
 
 
 40. Generally prefer reference(`&`) over pointers unless you need `nullptr` for any reason. (exceptions are mentioned right below)
@@ -362,7 +362,7 @@ This coding standards is inspired by these coding standards
     }
     ```
 
-44. Use pointers if the parameter should be generic void* parameter
+44. Use pointers if the parameter should be generic `void*` parameter
 
     ```cpp
     void Update(void* const something)
@@ -379,7 +379,7 @@ This coding standards is inspired by these coding standards
     ```
 
 
-46. Do not add size specifier for enum unless you need that specific size (e.g, for serialization of data members)
+46. Do not add size specifier for `enum` unless you need that specific size (e.g, for serialization of data members)
 
     ```cpp
     enum class eDirection : uint8_t
@@ -464,7 +464,7 @@ This coding standards is inspired by these coding standards
 1. There must be a blank line between includes and body.
 
 
-2. ~~Use Visual Studio default for tabs. If you are not using Visual Studio, use real tabs that are equal to 4 spaces.~~ 
+2. Use Visual Studio default for tabs. If you are not using Visual Studio, use real tabs that are equal to 4 spaces.
 
 
 3. Always place an opening curly brace (`{`) in a new line
@@ -559,7 +559,7 @@ This coding standards is inspired by these coding standards
 13. <<<TBD: do not use shared_ptr
 
 
-## ~~IV. Project Settings and Project Structure~~
-1. ~~Visual C++: Always use property sheets to change project settings~~
+## IV. Project Settings and Project Structure
+1. Visual C++: Always use property sheets to change project settings
 
-2. ~~Do not disable compile warnings in project settings. Use #pragma in code instead.~~
+2. Do not disable compile warnings in project settings. Use #pragma in code instead.
