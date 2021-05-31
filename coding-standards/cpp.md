@@ -37,19 +37,20 @@ This coding standards is inspired by these coding standards
     ```
 
 3. Use verb-object pairs for method names
+    
     a. Use pascal casing for public methods
 
-        ```cpp
-        public:
-            void DoSomething();
-        ```
+    ```cpp
+    public:
+        void DoSomething();
+    ```
 
     b. Use camel casing for other methods
     
-        ```cpp
-        private:
-            void doSomething();
-        ```
+    ```cpp
+    private:
+        void doSomething();
+    ```
 
 4. Use ALL_CAPS_SEPARATED_BY_UNDERSCORE for constants and defines
 
