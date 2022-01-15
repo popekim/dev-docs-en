@@ -93,7 +93,7 @@ The settings that can imported into your IDE can be found [here](https://github.
 8. Use static readonly if an object is a constant
 
    ```cs
-   public static readonly MY_CONST_OBJECT = new MyConstClass();
+   public static readonly MyConstClass MY_CONST_OBJECT = new MyConstClass();
    ```
 
 9. Use ALL_CAPS_SEPARATED_BY_UNDERSCORE for `static readonly` variables
@@ -301,8 +301,13 @@ The settings that can imported into your IDE can be found [here](https://github.
 33. The name of a bitflag enum must be suffixed by `Flags`
 
     ```cs
+    [Flags]
     public enum EVisibilityFlags
     {
+        None = 0,
+        Character = 1 << 0,
+        Terrain = 1 << 1,
+        Building = 1 << 2,
     }
     ```
 
