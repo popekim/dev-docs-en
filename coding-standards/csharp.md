@@ -366,7 +366,7 @@ The settings that can imported into your IDE can be found [here](https://github.
         case AccountType.Business:
             return somethingElse;
         default:
-            throw new ArgumentOutOfRangeException(nameof(AccountType));
+            throw new NotImplementedException($"unhandled switch case: {accountType}");
     }
     ```
 
