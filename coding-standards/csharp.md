@@ -1,6 +1,6 @@
 ---
 title: "C# Coding Standards"
-date: 2022-03-15
+date: 2022-07-04
 ---
 
 ## Preface
@@ -151,7 +151,7 @@ The settings that can imported into your IDE can be found [here](https://github.
     }
     ```
 
-16. prefix structs with `S`
+16. prefix structs with `S` unless they are `readonly struct`s
 
     ```cs
     public struct SUserID;
@@ -260,7 +260,7 @@ The settings that can imported into your IDE can be found [here](https://github.
     i. private methods
     ```
 
-28. Function overloading must be avoided in most cases
+28. If parameter types are general, function overloading must be avoided
 
 
     Use:
@@ -335,16 +335,7 @@ The settings that can imported into your IDE can be found [here](https://github.
 
 37. Always use containers from `System.Collections.Generic` over ones from `System.Collections`. Using a pure array is fine as well.
 
-38. Prefer to use real type over implicit typing(i.e, `var`) unless the type is obvious from the right side of assignment, or when the type is unimportant. Some acceptable `var` usage includes `IEnumerable` and when the `new` keyword is on the same line, showing what type of object is being created clearly.
-
-    ```cs
-    var text = "string obviously";
-    var age = 28;
-    var employee = new Employee();
-
-    string accountNumber = GetAccountNumber();
-    ```
-
+38. Use real type over implicit typing(i.e, `var`) unless the type is unimportant. Some acceptable `var` usage includes `IEnumerable` and when the `new` keyword is used for anonymous type.
 
 39. Use `static` class, not singleton pattern
 
@@ -392,6 +383,18 @@ The settings that can imported into your IDE can be found [here](https://github.
 48. Try not to use an object initializer. Use explicit constructor with named parameters instead. Two exceptions.
     a. When the object is created at one place only. (e.g, one-time DTO)
     b. When the object is created inside a static method of the owning class. (e.g, factory pattern)
+
+49. Declare the variable for an `out` parameter on a seprate line. Do NOT declare it int the argument list.
+
+50. Do not use `using` declaration, introduced in C# 8.0. Use `using` statement instead.
+
+51. Always specify a data type after `new` keyword unless you are using annoymous type inside a function.
+
+52. Use private init-only setter(`private init`), introduced in C# 9.0, wherever possible.
+
+53. Use file scoped namespace declarations, introduced in C# 10.0.
+
+54. When strong-typing a generic type, use `readonly record struct`, introduced in C# 10.0.
 
 ## II. Code Formatting
 
