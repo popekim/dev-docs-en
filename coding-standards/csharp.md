@@ -427,7 +427,21 @@ The settings that can imported into your IDE can be found [here](https://github.
 
 ## III. Framework Specific Guidelines
 
-### A. XAML Controls
+### A. Auto Serialization/Deserialization (e.g. `System.Text.Json`)
+
+1. Auto-serializable data must be defined as `class`.
+
+2. Auto-serializable `class` must not contain any library-specific attribute in it.
+
+3. All data in auto-serializable `class` must be declared/defined via `public` auto properties. (1-to-1 mapping between properties and member variables)
+
+4. If you need a read-only property in auto-serializable `class`, make a `public` method instead.
+
+5. Auto-serializable `class` must have only one `public` constructor. This constructor must not take any parameter.
+
+6. Do not directly call a auto-serialization method. (e.g. `JsonSerializer.Serialize<>()`). Make a wrapper method instead to limit the parameter types.
+
+### B. XAML Controls
 
 1. Do not name (i.e, `x:name`) a control unless you absolutely need it
 
@@ -445,7 +459,7 @@ The settings that can imported into your IDE can be found [here](https://github.
     xButtonAccept
     ```
 
-### B. ASP .NET Core
+### C. ASP .NET Core
 
 1. When using DTO(Data Transfer Object)s for a request body for a RESTful API, make each value-type property as `nullable` so that model validation is automatic
 
@@ -463,7 +477,7 @@ The settings that can imported into your IDE can be found [here](https://github.
     ```
 
 
-### C. Service/Repo Pattern
+### D. Service/Repo Pattern
 
 1. For the DTO classes and enums that are only used internally (e.g, internal microservice or DTO between service and repo), prefix it with `X`. This means they are transient classes and enums
 
