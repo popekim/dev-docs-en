@@ -1,6 +1,6 @@
 ---
 title: "C# Coding Standards"
-date: 2022-07-04
+date: 2023-09-24
 ---
 
 ## Preface
@@ -386,15 +386,17 @@ The settings that can imported into your IDE can be found [here](https://github.
 
 49. Declare the variable for an `out` parameter on a seprate line. Do NOT declare it int the argument list.
 
-50. Do not use `using` declaration, introduced in C# 8.0. Use `using` statement instead.
+50. Do not use the null coalescing operator, introduced in C# 7.0.
 
-51. Always specify a data type after `new` keyword unless you are using annoymous type inside a function.
+51. Do not use `using` declaration, introduced in C# 8.0. Use `using` statement instead.
 
-52. Use private init-only setter(`private init`), introduced in C# 9.0, wherever possible.
+52. Always specify a data type after `new` keyword unless you are using annoymous type inside a function.
 
-53. Use file scoped namespace declarations, introduced in C# 10.0.
+53. Use private init-only setter(`private init`), introduced in C# 9.0, wherever possible.
 
-54. When strong-typing a generic type, use `readonly record struct`, introduced in C# 10.0.
+54. Use file scoped namespace declarations, introduced in C# 10.0.
+
+55. When strong-typing a generic type, use `readonly record struct`, introduced in C# 10.0.
 
 ## II. Code Formatting
 
