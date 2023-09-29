@@ -428,7 +428,10 @@ The settings that can imported into your IDE can be found [here](https://github.
     int index = 0;
     ```
 
-## III. Framework Specific Guidelines
+## III. Project Settings
+1. For Release builds, treat compiler warnings as errors.
+
+## IV. Framework Specific Guidelines
 
 ### A. Auto Serialization/Deserialization (e.g. `System.Text.Json`)
 
