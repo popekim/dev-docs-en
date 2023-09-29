@@ -1,6 +1,6 @@
 ---
 title: "C# Coding Standards"
-date: 2023-09-24
+date: 2023-09-29
 ---
 
 ## Preface
@@ -341,13 +341,14 @@ The settings that can imported into your IDE can be found [here](https://github.
 
 40. Use `async Task` instead of `async void`. The only place where `async void` is allowed is for the event handler.
 
+41. Do not add `-Async` postfix for `async` methods.
 
-41. Validate any external data at the boundary and return before passing the data into our functions. This means that we assume all data is valid after this point.
+42. Validate any external data at the boundary and return before passing the data into our functions. This means that we assume all data is valid after this point.
 
-42. Therefore, do not throw any exception from inside non-boundary methods. Also, exceptions should be handled at the boundary only.
+43. Therefore, do not throw any exception from inside non-boundary methods. Also, exceptions should be handled at the boundary only.
 
 
-43. As an exception to the previous rule, exception throwing is allowed when `switch`-`default` is used to catch missing `enum` handling logic. Still, do not catch this exception
+44. As an exception to the previous rule, exception throwing is allowed when `switch`-`default` is used to catch missing `enum` handling logic. Still, do not catch this exception
 
     ```cs
     switch (accountType)
@@ -361,10 +362,10 @@ The settings that can imported into your IDE can be found [here](https://github.
     }
     ```
 
-44. Prefer not to allow `null` parameters in your function, especially from a `public` one.
+45. Prefer not to allow `null` parameters in your function, especially from a `public` one.
 
 
-45. If `null` parameter is used, and postfix the parameter name with `OrNull`
+46. If `null` parameter is used, and postfix the parameter name with `OrNull`
 
     ```cs
     public Anim GetAnim(string nameOrNull)
@@ -372,31 +373,31 @@ The settings that can imported into your IDE can be found [here](https://github.
     }
     ```
 
-46. Prefer not to return `null` from any function, especially from a `public` one. However, you sometimes need to do this to avoid throwing exceptions.
+47. Prefer not to return `null` from any function, especially from a `public` one. However, you sometimes need to do this to avoid throwing exceptions.
 
-47. If `null` is returned from any function. Postfix the function name with `OrNull`.
+48. If `null` is returned from any function. Postfix the function name with `OrNull`.
 
     ```cs
     public string GetNameOrNull();
     ```
 
-48. Try not to use an object initializer. Use explicit constructor with named parameters instead. Two exceptions.
+49. Try not to use an object initializer. Use explicit constructor with named parameters instead. Two exceptions.
     a. When the object is created at one place only. (e.g, one-time DTO)
     b. When the object is created inside a static method of the owning class. (e.g, factory pattern)
 
-49. Declare the variable for an `out` parameter on a seprate line. Do NOT declare it int the argument list.
+50. Declare the variable for an `out` parameter on a seprate line. Do NOT declare it int the argument list.
 
-50. Do not use the null coalescing operator, introduced in C# 7.0.
+51. Do not use the null coalescing operator, introduced in C# 7.0.
 
-51. Do not use `using` declaration, introduced in C# 8.0. Use `using` statement instead.
+52. Do not use `using` declaration, introduced in C# 8.0. Use `using` statement instead.
 
-52. Always specify a data type after `new` keyword unless you are using annoymous type inside a function.
+53. Always specify a data type after `new` keyword unless you are using annoymous type inside a function.
 
-53. Use private init-only setter(`private init`), introduced in C# 9.0, wherever possible.
+54. Use private init-only setter(`private init`), introduced in C# 9.0, wherever possible.
 
-54. Use file scoped namespace declarations, introduced in C# 10.0.
+55. Use file scoped namespace declarations, introduced in C# 10.0.
 
-55. When strong-typing a generic type, use `readonly record struct`, introduced in C# 10.0.
+56. When strong-typing a generic type, use `readonly record struct`, introduced in C# 10.0.
 
 ## II. Code Formatting
 
@@ -476,19 +477,3 @@ The settings that can imported into your IDE can be found [here](https://github.
 
     ```cs
     public bool GetAsync([RouteParam]Guid userID)
-    ```
-
-
-### D. Service/Repo Pattern
-
-1. For the DTO classes and enums that are only used internally (e.g, internal microservice or DTO between service and repo), prefix it with `X`. This means they are transient classes and enums
-
-    ```cs
-    public sealed class XNode
-    {
-    }
-
-    public enum EXTransactionStatus
-    {
-    }
-    ```
