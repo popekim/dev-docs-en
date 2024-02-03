@@ -1,6 +1,6 @@
 ---
 title: "C# Coding Standards"
-date: 2023-11-24
+date: 2024-02-02
 ---
 
 ## Preface
@@ -94,7 +94,7 @@ The settings that can imported into your IDE can be found [here](https://github.
    public static readonly MyConstClass MY_CONST_OBJECT = new MyConstClass();
    ```
 
-1. Use ALL_CAPS_SEPARATED_BY_UNDERSCORE for `static readonly` variables
+1. Use ALL_CAPS_SEPARATED_BY_UNDERSCORE for `static readonly` variables used as constants
 
 1. Use `readonly` when a variable must be assigned only once
 
