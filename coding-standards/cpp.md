@@ -1,6 +1,6 @@
 ---
 title: "C++ Coding Standards"
-date: 2021-05-25
+date: 2024-08-09
 ---
 
 ## Preface
@@ -26,7 +26,7 @@ This coding standards is inspired by these coding standards
     struct AnimationInfo;
     ```
 
-2. Use camel casing for local variable names and function parameters
+1. Use camel casing for local variable names and function parameters
     
     ```cpp
     void SomeMethod(const int someParameter);
@@ -36,7 +36,7 @@ This coding standards is inspired by these coding standards
     }
     ```
 
-3. Use verb-object pairs for method names
+1. Use verb-object pairs for method names
     
     a. Use pascal casing for public methods
 
@@ -52,20 +52,31 @@ This coding standards is inspired by these coding standards
         void doSomething();
     ```
 
-4. Use ALL_CAPS_SEPARATED_BY_UNDERSCORE for constants and defines
+1. However, if a method simply returns a boolean state, the verb part of the name should be prefixed Is, Can, Has or Should. If the function name becomes not natural by doing so, use the 3rd-person singular form of another verb.
+
+    ```cpp
+    public:
+        bool IsAlive(const Person& person) const;
+        bool HasChild(const Person& person) const;
+        bool CanAccept(const Person& person) const;
+        bool ShouldDelete(const Person& person) const;
+        bool Exists(Person& person) const;
+   ```
+
+1. Use ALL_CAPS_SEPARATED_BY_UNDERSCORE for constants and defines
 
     ```cpp
     constexpr int SOME_CONSTANT = 1;
     ```
 
 
-5. Use all lowercase letters for namespaces
+1. Use all lowercase letters for namespaces
 
     ```cpp
     namespace abc{};
     ```
 
-6. prefix boolean variables with `b`
+1. prefix boolean variables with `b`
 
     ```cpp
     bool bFired;	// for local and public member variable
@@ -73,13 +84,13 @@ This coding standards is inspired by these coding standards
     ```
 
 
-7. prefix interfaces with `I`
+1. prefix interfaces with `I`
 
     ```cpp
     class ISomeInterface;
     ```
 
-8. prefix enums with `e`
+1. prefix enums with `e`
 
     ```cpp
     enum class eDirection
@@ -89,7 +100,7 @@ This coding standards is inspired by these coding standards
     }
     ```
 
-9. prefix class member variables with `m`.
+1. prefix class member variables with `m`.
 
     ```cpp
     class Employee
@@ -101,7 +112,7 @@ This coding standards is inspired by these coding standards
     }
     ```
 
-10. Use ALL_CAPS_SEPARATED_BY_UNDERSCORE for `goto` labels.
+1. Use ALL_CAPS_SEPARATED_BY_UNDERSCORE for `goto` labels.
 
     ```cpp
     goto MY_LABEL;
