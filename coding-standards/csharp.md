@@ -470,3 +470,4 @@ The settings that can imported into your IDE can be found [here](https://github.
 
     ```cs
     public bool GetUser([RouteParam]Guid userID)
+    ```
